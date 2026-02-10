@@ -1,0 +1,31 @@
+{
+  "name": "api-pets-growdev",
+  "version": "1.0.0",
+  "description": "Criação de uma API para gestão de pets como desafio de backend da Growdev.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabricio-milanio/api-pets-growdev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/fabricio-milanio/api-pets-growdev/issues"
+  },
+  "homepage": "https://github.com/fabricio-milanio/api-pets-growdev#readme",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "express": "^5.2.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
