@@ -48,8 +48,39 @@ const getPetById = async (req, res) => {
   });
 };
 
+const updatePet = async (req, res) => {
+  const { id } = req.params;
+  const { nome, raca, idade, nomeTutor } = req.body;
+
+  const petIndex = pets.findIndex((pet) => pet.id === id);
+
+  if (petIndex === -1) {
+    return res.status(404).json({
+      ok: false,
+      message: "Pet não encontrado",
+    });
+  }
+
+  const petAtualizado = {
+    id,
+    nome,
+    raca,
+    idade,
+    nomeTutor
+  };
+
+  pets[petIndex] = petAtualizado;
+
+  return res.status(200).json({
+    ok: true,
+    message: "Pet atualizado com sucesso",
+    dados: petAtualizado
+  });
+};
+
 export default {
   getPets,
   postPet,
   getPetById,
+  updatePet,
 }

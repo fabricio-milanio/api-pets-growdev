@@ -6,5 +6,6 @@ const router = express.Router();
 router.get("/", pets.getPets);
 router.post("/", pets.postPet);
 router.get("/:id", pets.getPetById);
+router.put("/:id", pets.updatePet);
 
 export default router;
