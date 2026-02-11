@@ -78,9 +78,30 @@ const updatePet = async (req, res) => {
   });
 };
 
+const deletePet = async (req, res) => {
+  const { id } = req.params;
+
+  const petIndex = pets.findIndex((pet) => pet.id === id);
+
+  if (petIndex === -1) {
+    return res.status(404).json({
+      ok: false,
+      message: "Pet não encontrado",
+    });
+  }
+
+  pets.splice(petIndex, 1);
+
+  return res.status(200).json({
+    ok: true,
+    message: "Pet deletado com sucesso",
+  });
+};
+
 export default {
   getPets,
   postPet,
   getPetById,
   updatePet,
+  deletePet
 }
